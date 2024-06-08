@@ -12,18 +12,6 @@
         <param-name>mysqlPassword</param-name>
         <param-value>1234</param-value>
     </context-param>
-    <context-param>
-        <param-name>header</param-name>
-        <param-value>
-            FAP | ICS2609 | 2CSC 
-        </param-value>
-    </context-param>
-    <context-param>
-        <param-name>footer</param-name>
-        <param-value> 
-            To, Denzel Angelo S. | Mendoza, Aleksy Marie | De Guia, Jasmine Aubrey | Mendoza, Ivan Lawrence | Sedillo Zandro Miguel
-        </param-value>
-    </context-param>
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>activelearning.LoginServlet</servlet-class>
