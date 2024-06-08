@@ -14,7 +14,6 @@
     </head>
     <body>
         <div class="header-content">
-                    <%= request.getServletContext().getInitParameter("header") %>
                     <link rel="stylesheet" type="text/css" href="landingpage.css"> 
                 </div>
         <div class="banner">
@@ -51,7 +50,6 @@
         </script>
                     <footer>
                 <div class="footer-content">
-                    <%= request.getServletContext().getInitParameter("footer") %>
                 </div>
             </footer>
     </body>

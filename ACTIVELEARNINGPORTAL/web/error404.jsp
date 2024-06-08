@@ -19,7 +19,7 @@
     </head>
     <body>
         <header>
-                <%= request.getServletContext().getInitParameter("header") %>
+
             </header>
 
     <div class="container">
@@ -32,7 +32,6 @@
         </form>
     </div>
         <footer>
-            <%= request.getServletContext().getInitParameter("footer") %>
         </footer>
     </body>
 </html>
