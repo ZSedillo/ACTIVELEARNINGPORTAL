@@ -1,0 +1,481 @@
+.headercontent, .footercontent {
+    background-color: #252323;
+    color: white; /* Adjusted color to match the header/footer color */
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1200;
+}
+
+.headercontent {
+    top: 0;
+    left:0;
+}
+
+.footercontent {
+    bottom: 0;
+    left:0;
+}
+
+.maincontent {
+            padding-top: 30px; /* Adjust based on the height of the header */
+            padding-bottom: 30px; /* Adjust based on the height of the footer */
+            transition: padding-left 0.3s ease;
+        }
+
+:root{
+   --main-color: #0076CE;
+   --orange:#f39c12;
+   --light-color:#888;
+   --light-bg:#d3d3d3;
+   --black:#222;
+   --white:#fff;
+   --border:.1rem solid rgba(0,0,0,.2);
+   --blue: #ADD8E6;
+   --button: #fff;
+}
+
+
+*{
+   font-family: 'Poppins';
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+}
+
+*::selection{
+   background-color: var(--main-color);
+   color:#fff;
+}
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+}
+
+html::-webkit-scrollbar{
+   width: 1rem;
+   height: .5rem;
+}
+
+html::-webkit-scrollbar-track{
+   background-color: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+   background-color: var(--main-color);
+   
+}
+
+body{
+   background-color: var(--light-bg);
+   padding-left: 30rem;
+}
+
+body.dark{
+   --light-color:#fff;
+   --light-bg:#333;
+   --black:#fff;
+   --white:#222;
+   --border:.1rem solid rgba(255,255,255,.2);
+   --blue: #0076CE;
+   --main-color: #ADD8E6;
+   --button: #083D77;
+}
+
+body.active{
+   padding-left: 0;
+}
+
+section{
+   padding:2rem;
+   margin: 0 auto;
+   max-width: 1200px;
+}
+
+.heading{
+   font-size: 2.5rem;
+   color:var(--black);
+   margin-bottom: 2.5rem;
+   border-bottom: var(--border);
+   padding-bottom: 1.5rem;
+   text-transform: capitalize;
+}
+
+.inline-btn,
+.inline-option-btn,
+.inline-delete-btn,
+.btn,
+.delete-btn,
+.option-btn{
+   border-radius: .5rem;
+   color:#fff;
+   font-size: 1.8rem;
+   cursor: pointer;
+   text-transform: capitalize;
+   padding:1rem 3rem;
+   text-align: center;
+   margin-top: 1rem;
+}
+
+.btn,
+.delete-btn,
+.option-btn{
+   display: block;
+   width: 100%;
+}
+
+.inline-btn,
+.inline-option-btn,
+.inline-delete-btn{
+   display: inline-block;
+}
+
+.btn,
+.inline-btn{
+   background-color: var(--main-color);
+}
+
+.option-btn,
+.inline-option-btn{
+   background-color:var(--orange);
+}
+
+.delete-btn,
+.inline-delete-btn{
+   background-color: var(--red);
+}
+
+.inline-btn:hover,
+.inline-option-btn:hover,
+.inline-delete-btn:hover,
+.btn:hover,
+.delete-btn:hover,
+.option-btn:hover{
+   background-color: var(--black);
+   color: var(--white);
+}
+
+.flex-btn{
+   display: flex;
+   gap: 1rem;
+}
+
+.header{
+   position: sticky;
+   top:0; left:0; right: 0;
+   background-color: var(--white);
+   border-bottom: var(--border);
+}
+
+.header .flex{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   position: relative;
+   padding: 1.5rem 2rem;
+}
+
+.header .flex .logo{
+   font-size: 2.5rem;
+   color: var(--black);
+}
+
+.header .flex .search-form{
+   width: 50rem;
+   border-radius: .5rem;
+   background-color: var(--light-bg);
+   padding:1.5rem 2rem;
+   display: flex;
+   gap:2rem;
+
+}
+
+.header .flex .icons div{
+   font-size: 2rem;
+   color:var(--black);
+   background-color: var(--light-bg);
+   border-radius: .5rem;
+   height: 4.5rem;
+   width: 4.5rem;
+   line-height: 4.5rem;
+   cursor: pointer;
+   text-align: center;
+   margin-left: .7rem;
+}
+
+.header .flex .icons div:hover{
+   background-color: var(--black);
+   color:var(--white);
+}
+
+.header .flex .profile{
+   position: absolute;
+   top:120%; right: 2rem;
+   background-color: var(--white);
+   border-radius: .5rem;
+   padding: 1.5rem;
+   text-align: center;
+   overflow: hidden;
+   transform-origin: top right;
+   transform: scale(0);
+   transition: .2s linear;
+   width: 30rem;
+}
+
+.header .flex .profile.active{
+   transform: scale(1);
+}
+
+.header .flex .profile .image{
+   height: 10rem;
+   width: 10rem;
+   border-radius: 50%;
+   object-fit: contain;
+   margin-bottom: 1rem;
+}
+
+.header .flex .profile .name{
+   font-size: 2rem;
+   color:var(--black);
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+.header .flex .profile .role{
+   font-size: 1.8rem;
+   color: var(--light-color);
+}
+
+
+.side-bar{
+   position: fixed;
+   top: 0; left:0;
+   width: 30rem;
+   background-color: var(--white);
+   height: 100vh;
+   border-right: var(--border);
+   z-index:1000;
+}
+
+.side-bar .profile{
+   padding:3rem 2rem;
+   text-align: center;
+}
+
+.side-bar .profile img{
+   height: 10rem;
+   width: 10rem;
+   border-radius: 50%;
+   object-fit: contain;
+   margin-bottom: 1rem;
+}
+
+.side-bar .profile .name{
+   font-size: 2rem;
+   color:var(--black);
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   text-transform: uppercase;
+
+}
+
+.side-bar .profile .role{
+   font-size: 1.8rem;
+   color: var(--light-color);
+}
+
+
+.side-bar p {
+    margin-bottom: 0;
+
+}
+
+.side-bar .navbar a{
+   display: block;
+   padding: 2rem;
+   font-size: 2rem;
+}
+
+.side-bar .navbar a i{
+   margin-right: 1.5rem;
+   color:var(--main-color);
+   transition: .2s linear;
+}
+
+.side-bar .navbar a span{
+   color:var(--light-color);
+}
+
+.side-bar .navbar a:hover{
+   background-color: var(--light-bg);
+}
+
+.side-bar .navbar a:hover i{
+   margin-right: 2.5rem;
+}
+
+.side-bar .navbar button {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+}
+
+.side-bar.active {
+    left: -30rem;
+}
+
+
+.form {
+    padding: 20px;    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--white);
+    border-radius: 10px;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 150px;
+ 
+}
+
+
+.form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.form p {
+    font-size: 1.5rem;
+    margin-left:20px;
+    color: var(--black);
+}
+
+form select,
+form input[type="radio"] {
+    margin-bottom: 10px;
+   margin-left:20px;
+}
+
+.form button {
+    background-color: var(--main-color);
+    color: var(--white);
+    border: none;
+    padding: 10px 360px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 20px; 
+}
+
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+.form button:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+.title{
+   font-size: 2rem;
+   color: var(--black);
+   margin-left:20px;
+}
+
+.heading{
+   font-size: 2.5rem;
+   color:var(--black);
+   margin-bottom: 2.5rem;
+   border-bottom: var(--border);
+   padding-bottom: 1.5rem;
+   text-transform: capitalize;
+   text-align: center;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .side-bar {
+       height: 200vh;
+   }
+   .form{
+        max-width: 90%; /* Adjust form max-width for smaller screens */
+    }
+    
+    .form button {
+        padding: 10px 300px; /* Adjust form max-width for smaller screens */
+    }
+}
+
+@media screen and (max-width: 1000px) {
+  .side-bar {
+       height: 200vh;
+   }
+   .form{
+        max-width: 90%; /* Adjust form max-width for smaller screens */
+    }
+    
+    .form button {
+        padding: 10px 150px; /* Adjust form max-width for smaller screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+   body {
+      padding-left: 40%;
+      padding-right: 0;
+   }
+
+   .header .flex {
+      width: 100%; /* Expand search form to full width */
+   }
+
+    .side-bar {
+       width:40%;
+       height: 300vh;
+   }
+   
+   .form {
+        max-width: 90%; /* Adjust form max-width for smaller screens */
+    }
+    
+    .form button {
+        padding: 10px 50px;/* Adjust form max-width for smaller screens */
+    }
+}
+
+@media screen and (max-width: 576px) {
+   html {
+      font-size: 50%; /* Decrease base font size for smaller screens */
+   }
+
+   .header .flex .logo {
+      font-size: 2rem; /* Decrease logo size */
+   }
+
+   .heading {
+      font-size: 2rem; /* Decrease heading size */
+   }
+
+   .btn,
+   .delete-btn,
+   .option-btn {
+      font-size: 1.4rem; /* Decrease button font size */
+   }
+   
+  
+}
+
+@media screen and (max-width: 480px) {
+   .home-grid .box-container {
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); /* Adjust grid for even smaller screens */
+   }
+
+   .courses .box-container {
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); /* Adjust grid for even smaller screens */
+   }
+}

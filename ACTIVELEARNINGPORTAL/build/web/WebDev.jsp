@@ -1,0 +1,212 @@
+<%-- 
+    Document   : WebDev
+    Created on : 05 9, 24, 5:27:56 PM
+    Author     : LENOVO-Pc
+--%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.io.IOException"%>
+<%@page import="javax.servlet.ServletException"%>
+<%@page import="javax.servlet.http.HttpServlet"%>
+<%@page import="javax.servlet.http.HttpServletRequest"%>
+<%@page import="javax.servlet.http.HttpServletResponse"%>
+
+<%
+    // Retrieve the employment type from the request attribute
+    String employmentType = (String) request.getAttribute("employmentType");
+%>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>WebDev Class</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+        <link rel="stylesheet" href="GoToClass.css">
+        <link rel="shortcut icon"
+              href="https://activelearning.ph/wp-content/uploads/2021/03/cropped-favicon-1-192x192.png" />
+    </head>
+    <body>    
+        <header class="header">
+
+            <section class="flex">
+
+                <a href="home.html" class="logo">ActiveLearning</a>
+
+                <div class="icons">
+                    <div id="menu-btn" class="fas fa-bars"></div>
+                    <div id="toggle-btn" class="fas fa-sun"></div>
+                </div>
+            </section>
+
+            <div class="header-container">
+                <h1>WebDev Programming</h1>
+                <div class="instructor-container">
+
+                </div>
+
+            </div> 
+
+
+            <div class="side-bar">
+
+            
+            </div>
+            <div class="button-container">
+                <button class="button" onclick="scrollToSection('overview')">Overview</button>
+                <button class="button" onclick="scrollToSection('course-outline')">Course Outline</button>
+                <button class="button" onclick="scrollToSection('schedule')">Schedule</button>
+            </div>
+
+            <div class="container">
+                <div class="container-item" id="overview">
+                    <div class='overview'><h2>Overview </h2><label class="label">What to learn about?</label><button class="dropdown-btn" id="dropdown-btn"><i class="fas fa-angle-down"></i></button></div>
+                    <div class="hidden-text">
+                        <p>This web development training course introduces you to the basics of HTML and Cascading Style Sheets (CSS), the most fundamental technologies in creating web pages. After attending this web development training course, you will know how to create web pages that can be used for both desktop and mobile devices. You will also be introduced to software tools professionals use to create professional looking web pages.</p>
+
+                    </div>
+                </div>
+
+
+                <div class="container-item" id="course-outline">
+                    <h2>Course Outline</h2>
+                    <div class="dropdown">
+                        <div class='overview'><label class="label">Introduction to HTML </label><button class="dropdown-btn" id="dropdown-btn"><i class="fas fa-angle-down"></i></button>
+                        </div>
+
+                        <div class="dropdown-content" >
+                            <ul>
+                                <li>HTML Elements</li>
+                                <li>HTML Attributes</li>
+                                <li>Your First Web Page</li>
+                                <li>Adding Line Breaks</li>
+                                <li>Adding Spaces</li>
+                                <li>Adding Paragraphs</li>
+                                <li>Adding Headings</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <div class='overview'><label class="label">Formatting Text</label><button class="dropdown-btn" id="dropdown-btn"><i class="fas fa-angle-down"></i></button>
+                        </div>
+
+                        <div class="dropdown-content">
+                            <ul>
+                                <li>Bolding, Italicizing and Underlining Text</li>
+                                <li>Creating Subscripts and Superscripts</li>
+                                <li>Making Text Small</li>
+                                <li>Highlighting, Striking, Quoting Text</li>
+                                <li>Displaying Computer Code</li>
+                                <li>Writing Preformatted Text</li>
+                                <li>Creating Unordered Lists</li>
+                                <li>Creating Ordered Lists</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown" >
+                        <div class='overview'><label class="label">Formatting with CSS </label><button class="dropdown-btn" id="dropdown-btn"><i class="fas fa-angle-down"></i></button>
+                        </div>
+
+                       
+                              <div class="dropdown-content">
+                            <ul>
+                                <li>Cascading Style Sheets</li>
+                                <li>Linking CSS to your HTML page</li>
+                                <li>Using Colors</li>
+                                 <li>Using Fonts</li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+</div> 
+
+
+
+                <script>
+                    function scrollToSection(sectionId) {
+                        const section = document.getElementById(sectionId);
+                        const yOffset = -60; // Adjust this value according to your layout
+                        const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                        window.scrollTo({top: y, behavior: 'smooth'});
+                    }
+                </script>
+
+                <script>
+                    let toggleBtn = document.getElementById('toggle-btn');
+                    let body = document.body;
+                    let darkMode = localStorage.getItem('dark-mode');
+
+                    const enableDarkMode = () => {
+                        toggleBtn.classList.replace('fa-sun', 'fa-moon');
+                        body.classList.add('dark');
+                        localStorage.setItem('dark-mode', 'enabled');
+                    };
+
+                    const disableDarkMode = () => {
+                        toggleBtn.classList.replace('fa-moon', 'fa-sun');
+                        body.classList.remove('dark');
+                        localStorage.setItem('dark-mode', 'disabled');
+                    };
+
+                    if (darkMode === 'enabled') {
+                        enableDarkMode();
+                    }
+
+                    toggleBtn.onclick = (e) => {
+                        darkMode = localStorage.getItem('dark-mode');
+                        if (darkMode === 'disabled') {
+                            enableDarkMode();
+                        } else {
+                            disableDarkMode();
+                        }
+                    };
+
+                    let sideBar = document.querySelector('.side-bar');
+                    let dropdownBtns = document.querySelectorAll('.dropdown-btn');
+
+                    document.querySelector('#menu-btn').onclick = () => {
+                        sideBar.classList.toggle('active');
+                        body.classList.toggle('active');
+
+                    };
+
+
+                    let dropdownBtn = document.querySelectorAll('.dropdown-btn');
+                    dropdownBtn.forEach(btn => {
+                        btn.addEventListener('click', () => {
+                            btn.classList.toggle('click');
+                        });
+                    });
+
+
+                    window.onscroll = () => {
+                        profile.classList.remove('active');
+                        search.classList.remove('active');
+
+                        if (window.innerWidth < 1200) {
+                            sideBar.classList.remove('active');
+                            body.classList.remove('active');
+                        }
+                    };
+                </script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const overviewContainer = document.getElementById('overview');
+                        const arrowIcon = overviewContainer.querySelector('.dropdown-btn');
+
+                        arrowIcon.addEventListener('click', function () {
+                            overviewContainer.classList.toggle('active');
+                        });
+                    });
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const dropdownButtons = document.querySelectorAll('.dropdown-btn');
+
+                        dropdownButtons.forEach(button => {
+                            button.addEventListener('click', function () {
+                                const dropdownContent = this.parentElement.nextElementSibling;
+                                dropdownContent.classList.toggle('active');
+                            });
+                        });
+                    });
+                </script>
+                </body>
+</html>

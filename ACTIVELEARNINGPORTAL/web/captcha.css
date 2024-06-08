@@ -1,0 +1,110 @@
+body {
+    font-family: Poppins, sans-serif;
+    color: #084d77;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),url('img/laptop.png');
+    background-color: #252323;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.header-content, .footer-content {
+    background-color: #252323;
+    color: white; /* Adjusted color to match the header/footer color */
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-content {
+    top: 0;
+}
+
+.footer-content {
+    bottom: 0;
+}
+
+
+.body-content {
+    flex: 1; /* Make the content area expand to fill the available space */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+img {
+    width: auto; /* Adjust width as needed */
+    height: 100px; /* This will maintain the aspect ratio */
+    margin-bottom: 20px;
+}
+form {
+    margin-bottom: 10px;
+    width: 80%;
+    height:100%;
+}
+.form {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    background-color: #fff;
+    min-height: 50vh;
+    max-width: 500px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    flex-direction: column;
+    border-color: black;
+}
+form input[type="text"],
+form input[type="password"],
+form input[type="submit"] {
+    width: calc(100% - 20px);
+    padding: 15px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    margin-top: 10px;
+}
+form label{
+    color:#252323;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.form h3{
+    color:#252323;
+    font-weight: bold;
+    font-size: 20px;
+}
+form input[type="text"],
+form input[type="password"] {
+    background-color: #E9E9EA;
+}
+h1 {
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+form input[type="submit"] {
+    background-color: #ee964b;
+    color: #fff;
+    cursor: pointer;
+}
+form input[type="submit"]:hover{
+    background-color: #f95738;
+    color: #fff;
+}
+
+#login-button{
+    margin-top:30px;
+}

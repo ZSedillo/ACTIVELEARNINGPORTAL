@@ -1,0 +1,615 @@
+:root{
+   --main-color: #0076CE;
+   --orange:#f39c12;
+   --light-color:#888;
+   --light-bg:#eee;
+   --black:#2c3e50;
+   --white:#fff;
+   --border:.1rem solid rgba(0,0,0,.2);
+   --blue: #ADD8E6;
+   --button: #fff;
+}
+
+*{
+   font-family: 'Poppins';
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+}
+
+*::selection{
+   background-color: var(--main-color);
+   color:#fff;
+}
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+}
+
+html::-webkit-scrollbar{
+   width: 1rem;
+   height: .5rem;
+}
+
+html::-webkit-scrollbar-track{
+   background-color: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+   background-color: var(--main-color);
+}
+
+body{
+   background-color: var(--light-bg);
+   padding-left: 30rem;
+}
+
+body.dark{
+   --light-color:#fff;
+   --light-bg:#333;
+   --black:#fff;
+   --white:#222;
+   --border:.1rem solid rgba(255,255,255,.2);
+   --blue: #0076CE;
+   --main-color: #ADD8E6;
+   --button: #083D77;
+}
+
+body.active{
+   padding-left: 0;
+}
+
+section{
+   padding:2rem;
+   margin: 0 auto;
+   max-width: 1200px;
+}
+
+.heading{
+   font-size: 2.5rem;
+   color:var(--black);
+   margin-bottom: 2.5rem;
+   border-bottom: var(--border);
+   padding-bottom: 1.5rem;
+   text-transform: capitalize;
+}
+
+.inline-btn,
+.inline-option-btn,
+.inline-delete-btn,
+.btn,
+.delete-btn,
+.option-btn{
+   border-radius: .5rem;
+   color:var(--white);
+   font-size: 1.8rem;
+   cursor: pointer;
+   text-transform: capitalize;
+   padding:1rem 3rem;
+   text-align: center;
+   margin-top: 1rem;
+}
+
+.btn,
+.delete-btn,
+.option-btn{
+   display: block;
+   width: 100%;
+}
+
+.inline-btn,
+.inline-option-btn,
+.inline-delete-btn{
+   display: inline-block;
+}
+
+.btn,
+.inline-btn{
+   background-color: var(--main-color);
+}
+
+.option-btn,
+.inline-option-btn{
+   background-color:var(--orange);
+}
+
+.delete-btn,
+.inline-delete-btn{
+   background-color: var(--red);
+}
+
+.inline-btn:hover,
+.inline-option-btn:hover,
+.inline-delete-btn:hover,
+.btn:hover,
+.delete-btn:hover,
+.option-btn:hover{
+   background-color: var(--black);
+   color: var(--white);
+}
+
+.flex-btn{
+   display: flex;
+   gap: 1rem;
+}
+
+.header{
+   position: sticky;
+   top:0; left:0; right: 0;
+   background-color: var(--white);
+   z-index: 1000;
+   border-bottom: var(--border);
+}
+
+.header .flex{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   position: relative;
+   padding: 1.5rem 2rem;
+}
+
+.header .flex .logo{
+   font-size: 2.5rem;
+   color: var(--black);
+}
+
+.header .flex .search-form{
+   width: 50rem;
+   border-radius: .5rem;
+   background-color: var(--light-bg);
+   padding:1.5rem 2rem;
+   display: flex;
+   gap:2rem;
+
+}
+
+.header .flex .search-form input{
+   width: 100%;
+   font-size: 1.8rem;
+   color:var(--black);
+   background:none;
+}
+
+.header .flex .search-form button{
+   background:none;
+   font-size: 2rem;
+   cursor: pointer;
+   color:var(--black);
+}
+
+.header .flex .search-form button:hover{
+   color: var(--main-color);
+}
+
+.header .flex .icons div{
+   font-size: 2rem;
+   color:var(--black);
+   background-color: var(--light-bg);
+   border-radius: .5rem;
+   height: 4.5rem;
+   width: 4.5rem;
+   line-height: 4.5rem;
+   cursor: pointer;
+   text-align: center;
+   margin-left: .7rem;
+}
+
+.header .flex .icons div:hover{
+   background-color: var(--black);
+   color:var(--white);
+}
+
+.header .flex .profile{
+   position: absolute;
+   top:120%; right: 2rem;
+   background-color: var(--white);
+   border-radius: .5rem;
+   padding: 1.5rem;
+   text-align: center;
+   overflow: hidden;
+   transform-origin: top right;
+   transform: scale(0);
+   transition: .2s linear;
+   width: 30rem;
+}
+
+.header .flex .profile.active{
+   transform: scale(1);
+}
+
+.header .flex .profile img{
+   height: 10rem;
+   width: 10rem;
+   border-radius: 50%;
+   object-fit: contain;
+   margin-bottom: 1rem;
+}
+
+.header .flex .profile .name{
+   font-size: 2rem;
+   color:var(--black);
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+.header .flex .profile .role{
+   font-size: 1.8rem;
+   color: var(--light-color);
+}
+
+#search-btn{
+   display: none;
+}
+
+.side-bar{
+   position: absolute;
+   top: 0; left: 0;
+   width: 30rem;
+   background-color: var(--white);
+   height: 150vh;
+   border-right: var(--border);
+   z-index: 1200;
+}
+
+.side-bar #close-btn{
+   text-align: right;
+   padding: 2rem;
+   display: none;
+}
+
+.side-bar #close-btn i{
+   text-align: right;
+   font-size: 2.5rem;
+   background:var(--red);
+   border-radius: .5rem;
+   color:var(--white);
+   cursor: pointer;
+   height: 4.5rem;
+   width: 4.5rem;
+   line-height: 4.5rem;
+   text-align: center;
+}
+
+.side-bar #close-btn i:hover{
+   background-color: var(--black);
+}
+
+.side-bar .profile{
+   padding:3rem 2rem;
+   text-align: center;
+}
+
+.side-bar .profile img{
+   height: 10rem;
+   width: 10rem;
+   border-radius: 50%;
+   object-fit: contain;
+   margin-bottom: 1rem;
+}
+
+.side-bar .profile .name{
+   font-size: 2rem;
+   color:var(--black);
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   text-transform: uppercase;
+
+}
+
+.side-bar .profile .role{
+   font-size: 1.8rem;
+   color: var(--light-color);
+}
+
+.side-bar .navbar a{
+   display: block;
+   padding: 2rem;
+   font-size: 2rem;
+}
+
+.home-grid .box-container .box button{
+    background-color: transparent;
+    font-size: 1.8rem;
+    margin:0;
+}
+
+.home-grid .box-container button{
+   color:var(--white);
+}
+.home-grid .box-container button:hover {
+   color: var(--white);
+}
+.courses .box-container button{
+   background-color: transparent;
+   border: none;
+   font-size: 1.8rem;
+}
+
+.courses .box-container button {
+   color:var(--white);
+}
+
+.courses .box-container button:hover {
+   color: var(--white);
+}
+
+.courses .box-container .box{
+    align-content: center;
+}
+
+.side-bar .navbar button {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+}
+
+.side-bar .navbar a i{
+   margin-right: 1.5rem;
+   color:var(--main-color);
+   transition: .2s linear;
+}
+
+.side-bar .navbar a span{
+   color:var(--light-color);
+}
+
+.side-bar .navbar a:hover{
+   background-color: var(--light-bg);
+}
+
+.side-bar .navbar a:hover i{
+   margin-right: 2.5rem;
+}
+
+.side-bar.active{
+   left: -30rem;
+}
+
+
+.home-grid .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); 
+  gap: 1.5rem;
+  justify-content: start; 
+  align-items: flex-start;
+}
+
+.home-grid .box-container .box {
+  background-color: var(--blue); 
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adding shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adding transition for box scaling and shadow */
+}
+
+.home-grid .box-container .box:hover {
+  transform: scale(1.05); /* Scaling up on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Changing shadow on hover */
+}
+
+.home-grid .box-container .box .title{
+   font-size: 2rem;
+   color: var(--black);
+   text-transform: capitalize;
+}
+
+.home-grid .box-container .box .flex{
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1.5rem;
+   margin-top: 2rem;
+}
+
+.home-grid .box-container .flex a{
+   background-color: var(--light-bg);
+   border-radius: .5rem;
+   padding: 1rem 1.5rem;
+   font-size: 1rem;
+}
+
+.home-grid .box-container .flex a i{
+   margin-right: 1rem;
+   color:var(--black);
+}
+
+.home-grid .box-container .flex a span{
+   color:var(--light-color);
+}
+
+.home-grid .box-container .flex a:hover{
+   background-color: var(--black);
+}
+
+.home-grid .box-container .flex a:hover span{
+   color:var(--white);
+}
+
+.home-grid .box-container .flex a:hover i{
+   color:var(--white);
+}
+
+.home-grid .box-container .tutor{
+   padding: 0;
+   font-size: 1rem;
+   color:var(--light-color);
+   line-height: 2;
+   
+}
+
+
+/* Additional styling for the form */
+.home-grid .box-container .box .application-form {
+   display: flex;
+   flex-direction: column;
+}
+
+.home-grid .box-container .box .application-form input,
+.home-grid .box-container .box .application-form select {
+   margin-bottom: 1rem;
+   padding: 0.5rem;
+   border: 1px solid #ccc;
+   border-radius: 0.3rem;
+   font-size: 1rem;
+}
+
+.home-grid .box-container .box .application-form button {
+   padding: 0.5rem 1rem;
+   border: none;
+   border-radius: 0.3rem;
+   background-color: #007bff;
+   color: #fff;
+   font-size: 1rem;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+.home-grid .box-container .box .application-form button:hover {
+   background-color: #0056b3;
+    color:var(--white);
+}
+
+.courses .box-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   gap:1.5rem;
+   justify-content: center;
+   align-items: flex-start;
+}
+.courses .box-container .box {
+    border-radius: .5rem;
+    background-color: var(--blue);
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding box-shadow for a raised effect */
+    transition: transform 0.3s ease; /* Adding transition for smooth animation */
+    max-width: 500px;
+}
+
+.courses .box-container .box:hover {
+    transform: translateY(-5px); /* Adding a subtle lift on hover */
+}
+
+.courses .box-container .box .tutor{
+   display: flex;
+   align-items: center;
+   gap: 1.5rem;
+   margin-bottom: 2.5rem;
+}
+
+.courses .box-container .box .tutor img{
+   height: 5rem;
+   width: 5rem;
+   border-radius: 50%;
+   object-fit: cover;
+}
+
+.courses .box-container .box .tutor h3{
+   font-size: 1.8rem;
+   color: var(--black);
+   margin-bottom: .2rem;
+}
+
+.courses .box-container .box .tutor span{
+   font-size: 1.3rem;
+   color:var(--light-color);
+}
+
+.courses .box-container .box .thumb{
+   position: relative;
+}
+
+.courses .box-container .box .thumb span{
+   position: absolute;
+   top:1rem; left: 1rem;
+   border-radius: .5rem;
+   padding: .5rem 1.5rem;
+   background-color: rgba(0,0,0,.3);
+   color: #fff;
+   font-size: 1.5rem;
+}
+
+.courses .box-container .box .thumb img{
+   width: 100%;
+   height: 20rem;
+   object-fit: cover;
+   border-radius: .5rem;
+}
+
+.courses .box-container .box .title{
+   font-size: 2rem;
+   color: var(--black);
+   padding-bottom: .5rem;
+   padding-top: 1rem;
+}
+.info h2 {
+    font-size: 16px;
+    color: var(--black);
+    font-weight: normal;
+}
+
+.info {
+    margin-top: 10px;  
+}
+
+.dark {
+    color:var(--black)
+}
+
+
+@media screen and (max-width: 992px) {
+  .side-bar {
+       height: 200vh;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   body {
+      padding-left: 40%;
+      padding-right: 0;
+   }
+
+   .header .flex {
+      width: 100%; /* Expand search form to full width */
+   }
+
+    .side-bar {
+       width:40%;
+       height: 300vh;
+   }
+}
+
+@media screen and (max-width: 576px) {
+   html {
+      font-size: 50%; /* Decrease base font size for smaller screens */
+   }
+
+   .header .flex .logo {
+      font-size: 2rem; /* Decrease logo size */
+   }
+
+   .heading {
+      font-size: 2rem; /* Decrease heading size */
+   }
+
+   .btn,
+   .delete-btn,
+   .option-btn {
+      font-size: 1.4rem; /* Decrease button font size */
+   }
+   
+  
+}
+
+@media screen and (max-width: 480px) {
+   .home-grid .box-container {
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); /* Adjust grid for even smaller screens */
+   }
+
+   .courses .box-container {
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); /* Adjust grid for even smaller screens */
+   }
+}

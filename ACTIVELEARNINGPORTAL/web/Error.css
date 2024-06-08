@@ -1,0 +1,107 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),url('laptop.png');
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #090B26;
+    margin: 0;
+    padding: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 2.3rem; /* Increase font size for emphasis */
+}
+
+.container {
+    width: 35%; /* Increase container width for better readability */
+    margin: 35px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 13px; /* Increase padding for better spacing */
+}
+
+.container p {
+    margin-bottom: 10px;
+    color: #777;
+    font-size: 1.2rem; /* Increase font size for better readability */
+}
+
+form {
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left;
+    color: #090B26;
+    font-size: 1rem; /* Increase font size for better readability */
+}
+
+input {
+    width: calc(100% - 16px);
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 6px; /* Increase border radius for smoother edges */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem; /* Increase font size for better readability */
+}
+
+header, footer {
+    background-color: #252323;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+header {
+    top: 0;
+}
+
+footer {
+    bottom: 0;
+}
+
+.header-content, .footer-content {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+button[type="submit"] {
+    background-color: #ee964b;
+    color: white;
+    cursor: pointer;
+    padding: 12px 80px;
+    border: none;
+    border-radius: 25px; /* Increase border radius for a more unique look */
+    font-size: 1.2rem; /* Increase font size for better visibility */
+    margin: 20px auto; /* Increase margin for better spacing */
+    transition: all 0.3s ease; /* Add transition for smoother hover effect */
+    outline: none; /* Remove default outline */
+}
+
+button[type="submit"]:hover {
+    background-color: #045286;
+    transform: scale(1.05); /* Add scaling effect on hover for a more interactive feel */
+}
