@@ -196,13 +196,13 @@ public class AddCourseServlet extends HttpServlet {
                     switch (course) 
                     {
                         case "Java":
-                            StartingDate = "2024-05-10";
+                            StartingDate = "2024-06-14";
                             break;
                         case "Python":
-                            StartingDate = "2024-05-12";
+                            StartingDate = "2024-06-14";
                             break;
                         case "WebDev":
-                            StartingDate = "2024-05-14";
+                            StartingDate = "2024-06-14";
                             break;
                         default:
                             break;
