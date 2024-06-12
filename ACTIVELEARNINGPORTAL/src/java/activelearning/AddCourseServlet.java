@@ -108,6 +108,7 @@ public class AddCourseServlet extends HttpServlet {
             instructor = "to be assigned";
         }
         
+        instructor = "to be assigned";
         System.out.println("Name: "+ name);
         System.out.println("Course: " + course);
         System.out.println("Type of Class: "+ typeOfClass);
@@ -141,7 +142,7 @@ public class AddCourseServlet extends HttpServlet {
                             statement.setString(2, course);
                             statement.setString(3, typeOfClass);
                             statement.setString(4, section);
-                            statement.setString(5, instructor);
+                            statement.setString(5, "to be assigned");
                             statement.setDate(6, java.sql.Date.valueOf(StartingDate));
 
                             int rowsInserted = statement.executeUpdate();
